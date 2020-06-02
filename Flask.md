@@ -21,3 +21,8 @@ grammar_cjkRuby: true
   宏macro当于python中的函数，宏代码保存在html文件中。使用时可以引入并调用。
   3.3.3 模版继承
   定义一个基模版，包含网页的导航栏、页脚等通用内容。每一个继承基模版的子模版在渲染时自动包含这部分内容。
+  基模版定义：
+  {% block scripts %}{% endblock %}
+  {% block content %}{% endblock %}
+  {% block styles %}{% endblock %}
+  {% block head %} {%endblock %}
