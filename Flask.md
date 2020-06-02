@@ -18,4 +18,5 @@ grammar_cjkRuby: true
   通常使用下划线开头来命名。
   
   3.3.2 宏
+  宏marco 相当于python中的函数，宏代码保存在html文件中。使用时可以引入并调用。
   
