@@ -13,6 +13,18 @@ grammar_cjkRuby: true
 
 3.2.3过滤器
 过滤器的本质就是函数。
+使用方式：
+
+过滤器的使用方式为：变量名 | 过滤器。
+{{variable | filter_name(*args)}}
+如果没有任何参数传给过滤器,则可以把括号省略掉, flask中过滤器支持链式调用
+{{variable | filter_name}}
+例子：
+from flask import Markup
+@app.template_filter()
+def musical(s):
+return s + Markup(' &#9835;')
+{{ name|musical }}-----使用
 
 
 ### 3.3 模版结构组织
