@@ -42,3 +42,5 @@ return s + Markup(' &#9835;')
   {% block content %}{% endblock %}
   {% block styles %}{% endblock %}
   {% block head %} {%endblock %}
+  
+  模版内容追加：{{super()}}
