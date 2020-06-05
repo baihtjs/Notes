@@ -44,3 +44,14 @@ return s + Markup(' &#9835;')
   {% block head %} {%endblock %}
   
   模版内容追加：{{super()}}
+  
+  ## 第四章 表单
+  ### 创建表单
+  from flask_wtf import FlaskForm
+from wtforms import StringField, PasswordField,BooleanField,SubmitField
+from wtforms.validators import DataRequired,Length
+class LoginForm(FlaskForm):
+    username = StringField('Username', validators=[DataRequired()])
+    password = PasswordField('Password', validators=[DataRequired(), Length(min=8)])
+    remember = BooleanField('Remember Me')
+    submit = SubmitField('Log in')
