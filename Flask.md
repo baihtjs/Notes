@@ -61,5 +61,5 @@ class LoginForm(FlaskForm):
 	POST方式：request.form.get('username')
 	3、表单验证
 	GET方式不验证。
-	POST方式验证表单数据
-	
+	POST方式验证表单数据：form1.validate_on_submit():
+	tips：form的action，如果没有指定URL，默认为当前的URL
