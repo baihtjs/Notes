@@ -47,6 +47,7 @@ return s + Markup(' &#9835;')
   
   ## 第四章 表单
   ### 创建表单
+  1、创建表单
   from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField,BooleanField,SubmitField
 from wtforms.validators import DataRequired,Length
@@ -55,3 +56,6 @@ class LoginForm(FlaskForm):
     password = PasswordField('Password', validators=[DataRequired(), Length(min=8)])
     remember = BooleanField('Remember Me')
     submit = SubmitField('Log in')
+	2、获取表单数据
+	GET方法： request.args
+	POST方式：request.form.get('username')
