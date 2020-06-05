@@ -59,3 +59,7 @@ class LoginForm(FlaskForm):
 	2、获取表单数据
 	GET方法： request.args
 	POST方式：request.form.get('username')
+	3、表单验证
+	GET方式不验证。
+	POST方式验证表单数据
+	
