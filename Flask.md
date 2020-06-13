@@ -72,3 +72,13 @@ Note.query.filter(Note.body=='SHAVE' and Note.id==3).all()
 Note.query.filter(and_(Note.body=='SHAVE' , Note.title=='666')).all()
 
 Note.query.filter(Note.body=='SHAVE').filter(Note.title=='456').all()
+
+
+like:
+Note.query.filter(Note.body.like('%SHAV%')).all()
+
+in:
+Note.query.filter(Note.body.in_(['SHAVE'])).all()
+
+not in:
+Note.query.filter(~Note.body.in_(['SHAVE'])).all()
