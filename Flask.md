@@ -63,3 +63,5 @@ class LoginForm(FlaskForm):
 	GET方式不验证。
 	POST方式验证表单数据：form1.validate_on_submit():
 	tips：form的action，如果没有指定URL，默认为当前的URL
+	
+## 第五章 数据库
