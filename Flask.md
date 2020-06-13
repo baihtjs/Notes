@@ -65,3 +65,6 @@ class LoginForm(FlaskForm):
 	tips：form的action，如果没有指定URL，默认为当前的URL
 	
 ## 第五章 数据库
+Note.query.filter(Note.body=='SHAVE', Note.id==3).all()
+
+Note.query.filter(Note.body=='SHAVE' and Note.id==3).all()
