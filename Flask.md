@@ -88,3 +88,6 @@ filter_by:
 Note.query.filter_by(body='SHAVE').all()
 
 Note.query.filter_by(body='SHAVE').filter_by(title='456').all()
+
+limit:
+Note.query.limit(2).all()
