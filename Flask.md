@@ -92,4 +92,52 @@ Note.query.filter_by(body='SHAVE').filter_by(title='456').all()
 limit:
 Note.query.limit(2).all()
 
+一对多的关系：
+外键 db.ForeignKey('singer.id')创建在“多”侧
+
+属性合集：db.relationship
+
+多对多的关系：
+association_table=db.Table('association',
+                           db.Column('student_id', db.Integer, db.ForeignKey('student.id')),
+                           db.Column('teacher_id', db.Integer, db.ForeignKey('teacher.id'))
+                            )
+teachers = db.relationship('Teacher', secondary=association_table, back_populates='students')
+students = db.relationship('Student', secondary=association_table, back_populates='teachers')
+![enter description here](./images/1592473887564.png)
+1、创建student teacher记录。 
+>>> s1 = Student(name='chenxiaoli')
+>>> t1 = Teaceher(name='laoshi')
+>>> s2 = Student(name='daijin')
+>>> t2 =  Teacher(name='laoshi2')
+>>> s3 = Student(name='student3')
+>>> t3 =  Teacher(name='laoshi3')
+>>> db.session.add(s1)
+>>> db.session.add(t1)
+>>> sb.session.add(t2)
+>>> db.session.add(s2)
+>>> db.session.add(s3)
+>>> db.session.add(t2)
+>>> db.session.add(t3)
+>>> db.session.commit()
+2、student_id teacher_id赋值
+>>> s1.teacher_id=1
+>>> s2.teacher_id=2
+>>> db.session.commit()
+>>> s1.teachers
+[]
+>>> t1.student_id=1
+>>> t2.student_id=2
+>>> s1.teachers
+[]
+>>> db.session.commit()
+3、student、teacher关系关联
+>>> s1.teachers.append(t1)
+>>> s1.teachers.append(t2)
+>>> s1.teachers
+[Teacher 'laoshi1', Teacher 'laoshi2']
+>>> db.session.commit()
+>>> t1.students
+[Student 'chenxiaoli']
+
 
