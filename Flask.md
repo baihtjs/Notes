@@ -120,7 +120,7 @@ students = db.relationship('Student', secondary=association_table, back_populate
 >>> db.session.add(t2)
 >>> db.session.add(t3)
 >>> db.session.commit()
-2、student_id teacher_id赋值
+2、student_id teacher_id赋值（该赋值设计关联表实际测试不成功，非关联表可以）
 >>> s1.teacher_id=1
 >>> s2.teacher_id=2
 >>> db.session.commit()
