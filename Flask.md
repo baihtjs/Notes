@@ -140,4 +140,12 @@ students = db.relationship('Student', secondary=association_table, back_populate
 >>> t1.students
 [Student 'chenxiaoli']
 
+数据库迁移Migrate
+安装flask-migrate
+
+创建迁移环境
+flask db init
+生成迁移脚本--flask db migrate -m "add note timestamp"
+更新数据库--flask db upgrade
+
 
