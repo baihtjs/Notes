@@ -131,7 +131,7 @@ students = db.relationship('Student', secondary=association_table, back_populate
 >>> s1.teachers
 []
 >>> db.session.commit()
-3、student、teacher关系关联
+3、student、teacher关系关联（列表追加方式，关联表下可以。）
 >>> s1.teachers.append(t1)
 >>> s1.teachers.append(t2)
 >>> s1.teachers
